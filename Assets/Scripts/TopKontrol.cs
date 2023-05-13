@@ -15,12 +15,12 @@ public class TopKontrol : MonoBehaviour
     public Color topunRengi;
     public Color turkuaz, sari, mor, pembe;
 
-    [SerializeField] Text scoreText;
+    [SerializeField] Text scoreText, bestScoreText;
 
 
     public static int score = 0;
 
-
+    int bestScore = 0;
     public GameObject halka, renkTekeri;
 
     private void Awake()
@@ -30,10 +30,13 @@ public class TopKontrol : MonoBehaviour
 
     private void Start()
     {
+        
         scoreText.text = "Score " + score;
         RastgeleRenkBelirle();
+        bestScore = PlayerPrefs.GetInt("BestScore");   //yapılan en iyi skoru hafızada tutar.
+        bestScoreText.text = "Best: " + bestScore.ToString();
     }
-
+   
 
 
     private void Update()
@@ -70,8 +73,14 @@ public class TopKontrol : MonoBehaviour
             Destroy(collision.gameObject); // renk tekerini yok et.
             return;
         }
-        if(collision.tag != mevcutRenk && collision.tag != "PuanArttirici" && collision.tag != "RenkTekeri") //tag ile renk aynı değil ise karakter ölür.
+        if(collision.tag != mevcutRenk && collision.tag != "PuanArttirici" && collision.tag != "RenkTekeri" || collision.tag == "GameOver") //tag ile renk aynı değil ise karakter ölür.
         {
+            if (bestScore < score)
+            {
+                bestScore = (int)score;
+                PlayerPrefs.SetInt("BestScore", bestScore);
+
+            }
             score = 0; // can sistemi olucaksa entegre et yapılmıycaksa  static kaldır.
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // sahneyi yeniden yükle.
         }
@@ -85,12 +94,9 @@ public class TopKontrol : MonoBehaviour
             Instantiate(renkTekeri, new Vector3(transform.position.x, transform.position.y + 11f, transform.position.z), Quaternion.identity);
             
 
-        }/*
-        if(collision.tag == "GameOver") // ekrandan cıkarsa karakter ölür.
-        {
-            Destroy(gameObject);
         }
-        */             
+        
+                  
 
 
     }
