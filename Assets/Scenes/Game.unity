@@ -1073,7 +1073,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Top sadece \xE7emberin kendi ile ayn\u0131 renkte olan par\xE7as\u0131ndan
     ge\xE7ebilir. Farkl\u0131 renge degmeden en fazla \xE7emberi ge\xE7 ve en y\xFCksek
-    skoru yap.\nUnutma renk topuna dokunman rengini degistirir.\n"
+    skoru yap.\nUnutma renk topuna dokunman topun rengini degistirir.\n"
 --- !u!222 &1294879007
 CanvasRenderer:
   m_ObjectHideFlags: 0
