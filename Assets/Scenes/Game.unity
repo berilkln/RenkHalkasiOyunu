@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 241284299}
   - component: {fileID: 241284300}
   m_Layer: 0
-  m_Name: Top
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1071,9 +1071,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Top sadece \xE7emberin kendi ile ayn\u0131 renkte olan par\xE7as\u0131ndan
-    ge\xE7ebilir. Farkl\u0131 renge degmeden en fazla \xE7emberi ge\xE7 ve en y\xFCksek
-    skoru yap.\nUnutma renk topuna dokunman topun rengini degistirir.\n"
+  m_Text: 'The ball can only pass through the part of the circle that has the same
+    color as it. Pass the most circles without touching the different color and make
+    the highest score.
+
+    Remember, touching the color ball changes the color of
+    the ball.'
 --- !u!222 &1294879007
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1300,7 +1303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "RENK \xC7EMBER\u0130 \n"
+  m_Text: COLOR CIRCLE
 --- !u!222 &1928527678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1318,7 +1321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1727842295731085571, guid: 89996a05aaab8457683e6be65ef8fdf8, type: 3}
       propertyPath: m_Name
-      value: Halka
+      value: Circle
       objectReference: {fileID: 0}
     - target: {fileID: 1727842295731085572, guid: 89996a05aaab8457683e6be65ef8fdf8, type: 3}
       propertyPath: m_RootOrder
@@ -1375,7 +1378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6017183792492389186, guid: 63c2317fe848e4042832251d1e30ea52, type: 3}
       propertyPath: m_Name
-      value: "RenkDeg\u0306is\u0327tirmeTekeri"
+      value: ColorDisk
       objectReference: {fileID: 0}
     - target: {fileID: 6017183792492389189, guid: 63c2317fe848e4042832251d1e30ea52, type: 3}
       propertyPath: m_RootOrder
